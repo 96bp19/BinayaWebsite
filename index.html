@@ -2,729 +2,832 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Binaya Poudel | Gameplay Programmer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binaya Poudel | Gameplay Programmer</title>
 
-	<link
-		href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;600&display=swap"
-		rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
-	<style>
-		:root {
-			--bg-main: #0f172a;
-			--bg-card: #1e293b;
-			--text-primary: #f8fafc;
-			--text-secondary: #94a3b8;
-			--accent-primary: #38bdf8;
-			--accent-glow: rgba(56, 189, 248, 0.15);
-			--border-color: #334155;
-			--nav-bg: rgba(15, 23, 42, 0.85);
-		}
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-primary: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --border-color: #334155;
+            --nav-bg: rgba(15, 23, 42, 0.85);
+        }
 
-		html {
-			scroll-behavior: smooth;
-		}
+        html {
+            scroll-behavior: smooth;
+        }
 
-		body {
-			margin: 0;
-			font-family: 'Inter', sans-serif;
-			background: var(--bg-main);
-			color: var(--text-primary);
-			line-height: 1.6;
-			background-image:
-				radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.04), transparent 25%),
-				radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.04), transparent 25%);
-		}
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.04), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(129, 140, 248, 0.04), transparent 25%);
+        }
 
-		h1,
-		h2,
-		h3,
-		h4 {
-			font-family: 'Outfit', sans-serif;
-			margin: 0;
-		}
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+        }
 
-		/* Navigation */
-		nav {
-			position: fixed;
-			top: 0;
-			width: 100%;
-			background: var(--nav-bg);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			border-bottom: 1px solid var(--border-color);
-			z-index: 1000;
-			padding: 1rem 0;
-		}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
 
-		.nav-container {
-			max-width: 1200px;
-			margin: 0 auto;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: 0 2rem;
-		}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-		.nav-logo {
-			font-family: 'Outfit', sans-serif;
-			font-weight: 800;
-			font-size: 1.2rem;
-			color: var(--text-primary);
-			text-decoration: none;
-		}
+        .nav-logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
 
-		.nav-links {
-			display: flex;
-			gap: 2rem;
-		}
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
 
-		.nav-links a {
-			color: var(--text-secondary);
-			text-decoration: none;
-			font-weight: 500;
-			font-size: 0.95rem;
-			transition: color 0.3s;
-		}
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
 
-		.nav-links a:hover {
-			color: var(--accent-primary);
-		}
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
 
-		/* Header */
-		header {
-			text-align: center;
-			padding: 10rem 2rem 6rem;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
+        /* Header */
+        header {
+            text-align: center;
+            padding: 10rem 2rem 6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-		.title {
-			font-size: 4rem;
-			font-weight: 800;
-			background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			margin-bottom: 0.5rem;
-		}
+        .title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
 
-		.subtitle {
-			color: var(--accent-primary);
-			font-size: 1.5rem;
-			font-weight: 600;
-			letter-spacing: 1px;
-		}
+        .subtitle {
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
 
-		.header-bio {
-			max-width: 700px;
-			margin: 1.5rem auto 2.5rem;
-			color: var(--text-secondary);
-			font-size: 1.15rem;
-		}
+        .header-bio {
+            max-width: 700px;
+            margin: 1.5rem auto 2.5rem;
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+        }
 
-		/* Skills Section */
-		.skills-container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			gap: 0.75rem;
-			max-width: 800px;
-			margin: 0 auto;
-		}
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
 
-		.skill-badge {
-			background: var(--bg-card);
-			border: 1px solid var(--border-color);
-			padding: 0.5rem 1rem;
-			border-radius: 50px;
-			font-size: 0.9rem;
-			font-weight: 500;
-			color: var(--text-primary);
-			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		}
+        .section-header {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-transform: uppercase;
+        }
 
-		/* Main Content */
-		.container {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 4rem 2rem;
-		}
+        .section-header::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border-color);
+        }
 
-		.section-header {
-			font-size: 2.5rem;
-			font-weight: 800;
-			margin-bottom: 3rem;
-			display: flex;
-			align-items: center;
-			gap: 1rem;
-		}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
 
-		.section-header::after {
-			content: "";
-			height: 1px;
-			flex-grow: 1;
-			background: var(--border-color);
-		}
+        /* Game Cards */
+        .game-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
 
-		.grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-			gap: 2.5rem;
-		}
+        .game-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 30px var(--accent-glow);
+        }
 
-		/* Game Cards */
-		.game-card {
-			background: var(--bg-card);
-			border: 1px solid var(--border-color);
-			border-radius: 12px;
-			overflow: hidden;
-			display: flex;
-			flex-direction: column;
-			transition: all 0.3s ease;
-			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-		}
+        .card-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-		.game-card:hover {
-			transform: translateY(-8px);
-			border-color: var(--accent-primary);
-			box-shadow: 0 12px 30px var(--accent-glow);
-		}
+        .card-image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
 
-		.card-image-wrapper {
-			position: relative;
-			width: 100%;
-			padding-top: 56.25%;
-			/* 16:9 Aspect Ratio */
-			overflow: hidden;
-			border-bottom: 1px solid var(--border-color);
-		}
+        .game-card:hover .card-image-wrapper img {
+            transform: scale(1.05);
+        }
 
-		.card-image-wrapper img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			transition: transform 0.5s ease;
-		}
+        .game-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
-		.game-card:hover .card-image-wrapper img {
-			transform: scale(1.05);
-		}
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
 
-		.game-content {
-			padding: 2rem;
-			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
-		}
+        .game-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
 
-		.game-title {
-			font-size: 1.5rem;
-			margin-bottom: 0.5rem;
-			color: var(--text-primary);
-		}
+        /* Content Boxes */
+        .highlight-box {
+            background: rgba(15, 23, 42, 0.5);
+            border-left: 3px solid var(--accent-primary);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
 
-		.game-desc {
-			color: var(--text-secondary);
-			font-size: 0.95rem;
-			margin-bottom: 1.5rem;
-		}
+        .highlight-box h4 {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
 
-		/* Content Boxes */
-		.highlight-box {
-			background: rgba(15, 23, 42, 0.5);
-			border-left: 3px solid var(--accent-primary);
-			padding: 1.25rem;
-			margin-bottom: 1rem;
-			border-radius: 0 8px 8px 0;
-			font-size: 0.9rem;
-			color: var(--text-secondary);
-		}
+        .highlight-box ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
 
-		.highlight-box h4 {
-			color: var(--text-primary);
-			font-size: 0.85rem;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			margin-bottom: 0.75rem;
-		}
+        .highlight-box li {
+            margin-bottom: 0.5rem;
+        }
 
-		.highlight-box ul {
-			margin: 0;
-			padding-left: 1.2rem;
-		}
+        .highlight-box li:last-child {
+            margin-bottom: 0;
+        }
 
-		.highlight-box li {
-			margin-bottom: 0.5rem;
-		}
+        .highlight-alt {
+            border-left-color: #818cf8;
+            background: rgba(129, 140, 248, 0.05);
+        }
 
-		.highlight-box li:last-child {
-			margin-bottom: 0;
-		}
+        /* Tags & Links */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
 
-		.highlight-alt {
-			border-left-color: #818cf8;
-		}
+        .tech-tag {
+            font-size: 0.75rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            background: var(--bg-main);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            font-weight: 600;
+        }
 
-		/* Tags & Links */
-		.tech-stack {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.5rem;
-			margin-top: auto;
-			padding-top: 1.5rem;
-		}
+        .links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
 
-		.tech-tag {
-			font-size: 0.75rem;
-			padding: 0.35rem 0.75rem;
-			border-radius: 4px;
-			background: var(--bg-main);
-			color: var(--text-secondary);
-			border: 1px solid var(--border-color);
-			font-weight: 600;
-		}
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
 
-		.links {
-			margin-top: 1.5rem;
-			display: flex;
-			gap: 1rem;
-		}
+        .btn-primary {
+            background: var(--accent-primary);
+            color: var(--bg-main);
+            border: 1px solid var(--accent-primary);
+        }
 
-		.btn {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			padding: 0.6rem 1.2rem;
-			border-radius: 6px;
-			font-family: 'Inter', sans-serif;
-			font-weight: 600;
-			font-size: 0.9rem;
-			text-decoration: none;
-			transition: all 0.2s;
-			cursor: pointer;
-		}
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent-primary);
+        }
 
-		.btn-primary {
-			background: var(--accent-primary);
-			color: var(--bg-main);
-			border: 1px solid var(--accent-primary);
-		}
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
 
-		.btn-primary:hover {
-			background: transparent;
-			color: var(--accent-primary);
-		}
+        .btn-outline:hover {
+            border-color: var(--text-primary);
+        }
 
-		.btn-outline {
-			background: transparent;
-			color: var(--text-primary);
-			border: 1px solid var(--border-color);
-		}
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
 
-		.btn-outline:hover {
-			border-color: var(--text-primary);
-		}
+        footer h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
 
-		/* Footer */
-		footer {
-			text-align: center;
-			padding: 5rem 2rem;
-			background: var(--bg-card);
-			border-top: 1px solid var(--border-color);
-			margin-top: 4rem;
-		}
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
 
-		footer h2 {
-			font-size: 2rem;
-			margin-bottom: 1rem;
-		}
+        .social-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
 
-		.social-links {
-			margin-top: 2rem;
-			display: flex;
-			justify-content: center;
-			gap: 1.5rem;
-		}
+        .social-links a:hover {
+            color: var(--accent-primary);
+        }
 
-		.social-links a {
-			color: var(--text-secondary);
-			text-decoration: none;
-			font-weight: 500;
-			transition: color 0.2s;
-		}
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.8rem;
+            }
 
-		.social-links a:hover {
-			color: var(--accent-primary);
-		}
+            .section-header {
+                font-size: 2rem;
+            }
 
-		/* Responsive */
-		@media (max-width: 768px) {
-			.title {
-				font-size: 2.8rem;
-			}
-
-			.section-header {
-				font-size: 2rem;
-			}
-
-			.nav-links {
-				display: none;
-				/* Consider a hamburger menu for mobile later */
-			}
-		}
-	</style>
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-	<nav>
-		<div class="nav-container">
-			<a href="#" class="nav-logo">BP.</a>
-			<div class="nav-links">
-				<a href="#commercial">Commercial</a>
-				<a href="#projects">Projects</a>
-				<a href="#contact">Contact</a>
-			</div>
-		</div>
-	</nav>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">BP.</a>
+            <div class="nav-links">
+                <a href="#commercial">Commercial</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-	<header>
-		<h1 class="title">Binaya Poudel</h1>
-		<div class="subtitle">Gameplay Programmer • Unity Developer</div>
-		<p class="header-bio">
-			Gameplay-focused programmer with 6+ years of experience building scalable systems, AI-driven gameplay, and
-			multiplayer features for commercially released mobile games.
-		</p>
+    <header>
+        <h1 class="title">Binaya Poudel</h1>
+        <div class="subtitle">Gameplay Programmer • Unity Developer</div>
+        <p class="header-bio">
+            Gameplay-focused programmer with 6+ years of experience building scalable systems, AI-driven gameplay, and
+            multiplayer features for commercially released mobile games.
+        </p>
+    </header>
 
-		<div class="skills-container">
-			<span class="skill-badge">C# & .NET</span>
-			<span class="skill-badge">Unity Engine</span>
-			<span class="skill-badge">Unity DOTS</span>
-			<span class="skill-badge">Systems Architecture</span>
-			<span class="skill-badge">AI / Behavior Trees</span>
-			<span class="skill-badge">LiveOps / Analytics</span>
-			<span class="skill-badge">Blender 3D</span>
-		</div>
-	</header>
+    <div class="container" id="commercial">
+        <h2 class="section-header">COMMERCIAL PROJECTS</h2>
+        <div class="grid">
 
-	<div class="container" id="commercial">
-		<h2 class="section-header">Commercial Projects</h2>
-		<div class="grid">
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="Ludo_Offline.webp" alt="Ludo">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">Ludo (100M+ Downloads)</h3>
+                    <p class="game-desc">A massively popular offline mobile board game with over 100 million downloads
+                        on Google Play. Contributed to the live production version by improving gameplay systems and
+                        implementing monetization and analytics features.</p>
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="Ludo_Offline.webp" alt="Ludo">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">Ludo (100M+ Downloads)</h3>
-					<p class="game-desc">A massively popular offline mobile board game. Contributed to live production
-						by improving gameplay systems, monetization, and analytics.</p>
+                    <div class="highlight-box">
+                        <h4>WHAT I DID</h4>
+                        <ul>
+                            <li>Implemented and maintained <strong>mobile ad integrations</strong> including rewarded
+                                ads and interstitials.</li>
+                            <li>Integrated <strong>Firebase Analytics, Remote Config, and Crashlytics</strong> to
+                                support live game monitoring and balancing.</li>
+                            <li>Worked on gameplay improvements and stability updates for the live production build.
+                            </li>
+                            <li>Collaborated with the team to maintain performance and compatibility across a wide range
+                                of Android devices.</li>
+                        </ul>
+                    </div>
 
-					<div class="highlight-box">
-						<h4>What I Did</h4>
-						<ul>
-							<li>Maintained mobile ad integrations (rewarded/interstitials).</li>
-							<li>Integrated Firebase Analytics, Remote Config, and Crashlytics.</li>
-							<li>Maintained performance across a wide range of Android devices.</li>
-						</ul>
-					</div>
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Working on a live game with millions of players taught me the importance
+                            of stability and careful feature rollout. I learned how analytics and remote configuration
+                            can be used to monitor player behaviour and adjust game balance without requiring full app
+                            updates.</p>
+                    </div>
 
-					<div class="highlight-box highlight-alt">
-						<h4>What I Learned</h4>
-						<p style="margin:0;">The importance of stability, careful feature rollout, and using remote
-							configuration to adjust game balance without full app updates.</p>
-					</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Mobile Ads</span>
+                        <span class="tech-tag">LiveOps</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://play.google.com/store/apps/details?id=io.yarsa.games.ludo"
+                            class="btn btn-primary" target="_blank">PlayStore</a>
+                    </div>
+                </div>
+            </div>
 
-					<div class="tech-stack">
-						<span class="tech-tag">Unity</span>
-						<span class="tech-tag">C#</span>
-						<span class="tech-tag">Firebase</span>
-						<span class="tech-tag">Mobile Ads</span>
-					</div>
-					<div class="links">
-						<a href="https://play.google.com/store/apps/details?id=io.yarsa.games.ludo"
-							class="btn btn-primary" target="_blank">View on Play Store</a>
-					</div>
-				</div>
-			</div>
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="Ludo.webp" alt="LudoMatch">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">LudoMatch / Snake & Ladder Multiplayer (5M+ Downloads)</h3>
+                    <p class="game-desc">A real-time multiplayer board game supporting competitive online matches and
+                        multiple game modes including Ludo and Snake & Ladder within the same application.</p>
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="Ludo.webp" alt="LudoMatch">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">LudoMatch Multiplayer (5M+)</h3>
-					<p class="game-desc">Real-time multiplayer board game supporting competitive online matches for Ludo
-						and Snake & Ladder.</p>
+                    <div class="highlight-box">
+                        <h4>WHAT I DID</h4>
+                        <ul>
+                            <li>Designed and implemented the <strong>real-time multiplayer gameplay server</strong>
+                                using <strong>Node.js, Socket.io, Redis, and TypeScript</strong>.</li>
+                            <li>Built systems for <strong>matchmaking, player invitations, host migration, and session
+                                    management</strong>.</li>
+                            <li>Implemented server-authoritative gameplay synchronization to ensure consistent board
+                                state across clients.</li>
+                            <li>Developed a shared gameplay architecture allowing <strong>Ludo and Snake &
+                                    Ladder</strong> to run on the same core board system.</li>
+                            <li>Integrated backend communication using REST APIs and JWT authentication.</li>
+                        </ul>
+                    </div>
 
-					<div class="highlight-box">
-						<h4>What I Did</h4>
-						<ul>
-							<li>Designed the real-time gameplay server using Node.js, Socket.io, Redis, and TypeScript.
-							</li>
-							<li>Built matchmaking, host migration, and session management.</li>
-							<li>Implemented server-authoritative gameplay sync.</li>
-						</ul>
-					</div>
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Building a real-time multiplayer system taught me how to manage
+                            server-authoritative game states and handle edge cases such as disconnects, reconnections,
+                            and host migration. I gained practical experience designing gameplay systems that remain
+                            consistent across multiple clients.</p>
+                    </div>
 
-					<div class="tech-stack">
-						<span class="tech-tag">Node.js</span>
-						<span class="tech-tag">Socket.io</span>
-						<span class="tech-tag">Redis</span>
-						<span class="tech-tag">TypeScript</span>
-					</div>
-					<div class="links">
-						<a href="https://play.google.com/store/apps/details?id=io.yarsa.games.snakenladder"
-							class="btn btn-primary" target="_blank">View on Play Store</a>
-					</div>
-				</div>
-			</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Socket.io</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Multiplayer</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://play.google.com/store/apps/details?id=io.yarsa.games.snakenladder"
+                            class="btn btn-primary" target="_blank">PlayStore</a>
+                    </div>
+                </div>
+            </div>
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="MightySurvivor.webp" alt="MightySurvivor">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">Mighty Survivor Force (100k+)</h3>
-					<p class="game-desc">High-octane rogue-lite survival game focused on fighting massive hordes with
-						evolving abilities.</p>
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="BlockMatch.webp" alt="Block Match">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">Block Match: Blast Game (100k+ Downloads)</h3>
+                    <p class="game-desc">A puzzle game requiring highly optimized logic to handle massive chain
+                        reactions and special block abilities.</p>
 
-					<div class="highlight-box">
-						<h4>Architecture & Systems</h4>
-						<ul>
-							<li>Architected a modular Skill System utilizing ScriptableObjects.</li>
-							<li>Built custom Behavior Tree AI allowing easy logic extension by the design team.</li>
-						</ul>
-					</div>
+                    <div class="highlight-box">
+                        <h4>WHAT I DID</h4>
+                        <ul>
+                            <li>Programmed 100% of the core gameplay loop and special block abilities.</li>
+                            <li>Developed a custom <strong>Level Editor System</strong> for designers to build stages
+                                rapidly.</li>
+                        </ul>
+                    </div>
 
-					<div class="tech-stack">
-						<span class="tech-tag">Behavior Trees</span>
-						<span class="tech-tag">Systems Architecture</span>
-						<span class="tech-tag">ScriptableObjects</span>
-					</div>
-					<div class="links">
-						<a href="https://play.google.com/store/apps/details?id=io.yarsa.games.mightysurvivorforce&hl=en"
-							class="btn btn-primary" target="_blank">View on Play Store</a>
-					</div>
-				</div>
-			</div>
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Developing the gameplay and level editor taught me how important internal
+                            tools are for production speed. By building designer-friendly tools, I learned how
+                            engineering decisions can dramatically accelerate content creation and iteration.</p>
+                    </div>
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="IndianDriving.webp" alt="Indian Driving School">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">Indian Driving School 3D (100k+)</h3>
-					<p class="game-desc">A 3D driving simulation and licensing game combining vehicle handling with
-						educational quiz mechanics.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity Tooling</span>
+                        <span class="tech-tag">Puzzle Logic</span>
+                        <span class="tech-tag">Optimization</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://play.google.com/store/apps/details?id=io.yarsa.games.blockpuzzle&hl=en"
+                            class="btn btn-primary" target="_blank">Play Store</a>
+                    </div>
+                </div>
+            </div>
 
-					<div class="highlight-box">
-						<h4>What I Did</h4>
-						<ul>
-							<li>Engineered 3D vehicle mechanics and precise collision detection.</li>
-							<li>Developed a robust UI state machine transitioning seamlessly between 2D UI overlays and
-								3D gameplay.</li>
-						</ul>
-					</div>
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="MightySurvivor.webp" alt="MightySurvivor">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">Mighty Survivor Force (100k+ Downloads)</h3>
+                    <p class="game-desc">A high-octane rogue-lite survival game focused on fighting massive hordes of
+                        enemies with evolving abilities.</p>
 
-					<div class="tech-stack">
-						<span class="tech-tag">3D Physics</span>
-						<span class="tech-tag">State Management</span>
-						<span class="tech-tag">Mobile Optimization</span>
-					</div>
-					<div class="links">
-						<a href="https://play.google.com/store/apps/details?id=io.yarsa.games.indiandrivingschool&hl=en"
-							class="btn btn-primary" target="_blank">View on Play Store</a>
-					</div>
-				</div>
-			</div>
+                    <div class="highlight-box">
+                        <h4>WHAT I DID</h4>
+                        <ul>
+                            <li>Architected a highly modular <strong>Skill System</strong> utilizing ScriptableObjects.
+                            </li>
+                            <li>Built a custom <strong>Behavior Tree AI</strong> allowing easy logic extension by the
+                                design team.</li>
+                        </ul>
+                    </div>
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="BlockMatch.webp" alt="Block Match">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">Block Match: Blast Game (100k+)</h3>
-					<p class="game-desc">Puzzle game requiring highly optimized logic to handle massive chain reactions
-						and special abilities.</p>
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Designing modular gameplay systems taught me how to decouple logic and
+                            data so that new abilities could be added without modifying the core systems. This
+                            reinforced the importance of scalable architecture in games with many interacting mechanics.
+                        </p>
+                    </div>
 
-					<div class="highlight-box">
-						<h4>What I Did</h4>
-						<ul>
-							<li>Programmed 100% of the core gameplay loop.</li>
-							<li>Developed a custom Level Editor System for rapid stage building.</li>
-						</ul>
-					</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Behavior Trees</span>
+                        <span class="tech-tag">Systems Architecture</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://play.google.com/store/apps/details?id=io.yarsa.games.mightysurvivorforce&hl=en"
+                            class="btn btn-primary" target="_blank">Play Store</a>
+                    </div>
+                </div>
+            </div>
 
-					<div class="tech-stack">
-						<span class="tech-tag">Unity Tooling</span>
-						<span class="tech-tag">Puzzle Logic</span>
-						<span class="tech-tag">Optimization</span>
-					</div>
-					<div class="links">
-						<a href="https://play.google.com/store/apps/details?id=io.yarsa.games.blockpuzzle&hl=en"
-							class="btn btn-primary" target="_blank">View on Play Store</a>
-					</div>
-				</div>
-			</div>
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="IndianDriving.webp" alt="Indian Driving School 3D">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">Indian Driving School 3D (100k+ Downloads)</h3>
+                    <p class="game-desc">A 3D driving simulation and licensing game combining vehicle handling with
+                        educational quiz mechanics.</p>
 
-		</div>
-	</div>
+                    <div class="highlight-box">
+                        <h4>WHAT I DID</h4>
+                        <ul>
+                            <li>Worked on 3D vehicle mechanics and collision detection for precise driving trials.</li>
+                            <li>Developed a robust UI state machine to handle the interactive license quiz system,
+                                seamlessly transitioning between 2D UI overlays and 3D gameplay.</li>
+                        </ul>
+                    </div>
 
-	<div class="container" id="projects" style="padding-top: 0;">
-		<h2 class="section-header">Independent & Side Projects</h2>
-		<div class="grid">
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Working on a driving simulation taught me how gameplay systems and UI must
+                            interact smoothly. I learned how to structure state management so that complex transitions
+                            between gameplay and UI flows remain predictable and maintainable.</p>
+                    </div>
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="TrapVsMonster.png" alt="Trap vs Monster">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">Trap vs Monster <span
-							style="font-size: 0.8rem; color: var(--accent-primary);">(In Dev)</span></h3>
-					<p class="game-desc">Lane-based strategy defense game blending Orcs Must Die and PvZ with systemic
-						depth.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">3D Physics</span>
+                        <span class="tech-tag">UI State Management</span>
+                        <span class="tech-tag">Mobile Optimization</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://play.google.com/store/apps/details?id=io.yarsa.games.indiandrivingschool&hl=en"
+                            class="btn btn-primary" target="_blank">Play Store</a>
+                    </div>
+                </div>
+            </div>
 
-					<div class="highlight-box">
-						<h4>Key Systems Built</h4>
-						<ul>
-							<li>Lane-based trap & enemy architecture.</li>
-							<li>Charge-driven elemental gate system.</li>
-							<li>Math-driven trap balance model (expected activations & economy pressure).</li>
-						</ul>
-					</div>
+        </div>
+    </div>
 
-					<div class="tech-stack">
-						<span class="tech-tag">Systems Design</span>
-						<span class="tech-tag">Game Balancing</span>
-						<span class="tech-tag">Math Modeling</span>
-					</div>
-				</div>
-			</div>
+    <div class="container" id="projects" style="padding-top: 0;">
+        <h2 class="section-header">Independent | Side Projects</h2>
+        <div class="grid">
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="HighChet.webp" alt="High Chet">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">High Chet: Kite Game (500k+)</h3>
-					<p class="game-desc">Chill 2D kite-flying game featuring dynamic thread-cutting mechanics.</p>
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="HighChet.webp" alt="High Chet">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">High Chet: Kite Game (500k+ Downloads)</h3>
+                    <p class="game-desc">A chill 2d kite-flying game featuring varied environments and dynamic
+                        thread-cutting mechanics.</p>
 
-					<div class="highlight-box">
-						<h4>Key Focus</h4>
-						<p style="margin:0;">Architected a scalable Inventory System to handle multiple kite types and
-							player stats. Implemented 2D spatial logic for the combat loop.</p>
-					</div>
+                    <div class="highlight-box">
+                        <h4>KEY FOCUS</h4>
+                        <p style="margin: 0;">Architected a scalable <strong>Inventory System</strong> to handle
+                            multiple kite types, unlockables, and player stats. Implemented the 2d spatial logic and
+                            collision detection required for the core "thread-cutting" combat loop across multiple
+                            environmental difficulties.</p>
+                    </div>
 
-					<div class="tech-stack">
-						<span class="tech-tag">Spatial Logic</span>
-						<span class="tech-tag">Inventory Architecture</span>
-					</div>
-					<div class="links">
-						<a href="https://play.google.com/store/apps/details?id=com.KhyaGames.HighChetKiteGame&hl=en"
-							class="btn btn-primary" target="_blank">View on Play Store</a>
-					</div>
-				</div>
-			</div>
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">This project helped me understand how gameplay systems and player
+                            progression interact. Building the inventory system required designing flexible data
+                            structures that could support multiple unlockable items and upgrades.</p>
+                    </div>
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="BarrelBlast.webp" alt="BarrelBlast">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">Barrel Blast: Zombie War</h3>
-					<p class="game-desc">Solo-developed survival shooter featuring modular weapons and dynamic enemy
-						waves.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Spatial Logic</span>
+                        <span class="tech-tag">Inventory Architecture</span>
+                        <span class="tech-tag">Environment Management</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://play.google.com/store/apps/details?id=com.KhyaGames.HighChetKiteGame&hl=en"
+                            class="btn btn-primary" target="_blank">Play Store</a>
+                    </div>
+                </div>
+            </div>
 
-					<div class="highlight-box">
-						<h4>Key Focus</h4>
-						<p style="margin:0;">Engineered custom Behavior Tree AI and a scalable weapon/power-up system.
-							Handled 100% of full-cycle deployment.</p>
-					</div>
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="BarrelBlast.webp" alt="BarrelBlast">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">Barrel Blast: Zombie War</h3>
+                    <p class="game-desc">A solo-developed, level-based survival shooter featuring modular weapons and
+                        dynamic enemy wave progression.</p>
 
-					<div class="tech-stack">
-						<span class="tech-tag">Custom AI</span>
-						<span class="tech-tag">Full-Cycle Dev</span>
-					</div>
-					<div class="links">
-						<a href="https://play.google.com/store/apps/details?id=com.TopFunGamesForYou.BarrelBlastZombieWar&hl=en"
-							class="btn btn-primary" target="_blank">View on Play Store</a>
-					</div>
-				</div>
-			</div>
+                    <div class="highlight-box">
+                        <h4>KEY FOCUS</h4>
+                        <p style="margin: 0;">Engineered a custom <strong>Behavior Tree AI</strong> to manage diverse
+                            zombie patterns (patrolling, chasing, attacking). Built a scalable weapon and power-up
+                            system allowing for the rapid addition of new gun types without cluttering the core player
+                            logic. Handled 100% of the full-cycle deployment to the Play Store.</p>
+                    </div>
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="DrillTillDeep.png" alt="DrillTillDeep">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">DrillTillDeep (Game Jam)</h3>
-					<p class="game-desc">Fast-paced mining survival game developed under strict 48-hour time
-						constraints.</p>
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Developing the entire project independently taught me how different game
+                            systems interact under production constraints. I gained experience balancing gameplay
+                            complexity with performance and maintainability.</p>
+                    </div>
 
-					<div class="highlight-box">
-						<h4>Key Focus</h4>
-						<p style="margin:0;">Lead Gameplay Programmer. Engineered core digging mechanics and resource
-							management loops.</p>
-					</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Custom AI (Behavior Trees)</span>
+                        <span class="tech-tag">Weapon Systems</span>
+                        <span class="tech-tag">Full-Cycle Dev</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://play.google.com/store/apps/details?id=com.TopFunGamesForYou.BarrelBlastZombieWar&hl=en"
+                            class="btn btn-primary" target="_blank">Play Store</a>
+                    </div>
+                </div>
+            </div>
 
-					<div class="tech-stack">
-						<span class="tech-tag">Rapid Prototyping</span>
-						<span class="tech-tag">Team Collaboration</span>
-					</div>
-					<div class="links">
-						<a href="https://itsabiral.itch.io/drilltilldeep" class="btn btn-outline" target="_blank">Play
-							on Itch.io</a>
-					</div>
-				</div>
-			</div>
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="DrillTillDeep.png" alt="DrillTillDeep">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">DrillTillDeep</h3>
+                    <p class="game-desc">A fast-paced mining survival game developed under strict Game Jam time
+                        constraints.</p>
 
-			<div class="game-card">
-				<div class="card-image-wrapper">
-					<img src="Goober.png" alt="Goobers">
-				</div>
-				<div class="game-content">
-					<h3 class="game-title">Goobers (Contract)</h3>
-					<p class="game-desc">Chaotic physics-based multiplayer racer.</p>
+                    <div class="highlight-box">
+                        <h4>KEY FOCUS</h4>
+                        <p style="margin: 0;">Acted as the lead <strong>Gameplay Programmer</strong> in a
+                            cross-functional team. Engineered the core digging mechanics, resource management loops, and
+                            seamlessly integrated 2D art and UI assets provided by team members within a 48-hour
+                            deadline.</p>
+                    </div>
 
-					<div class="highlight-box">
-						<h4>Key Focus</h4>
-						<p style="margin:0;">Integrated Photon Fusion to handle authoritative server logic and real-time
-							rigid body physics synchronization.</p>
-					</div>
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Working under a strict game jam deadline taught me how to prioritize core
+                            gameplay systems and rapidly integrate assets from multiple disciplines while maintaining
+                            stable gameplay.</p>
+                    </div>
 
-					<div class="tech-stack">
-						<span class="tech-tag">Photon Fusion</span>
-						<span class="tech-tag">Networked Physics</span>
-					</div>
-				</div>
-			</div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Rapid Prototyping</span>
+                        <span class="tech-tag">Asset Integration</span>
+                        <span class="tech-tag">Team Collaboration</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://itsabiral.itch.io/drilltilldeep" class="btn btn-outline" target="_blank">Play
+                            on Itch.io</a>
+                    </div>
+                </div>
+            </div>
 
-		</div>
-	</div>
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="BurgerBabble.png" alt="BurgerBabble">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">BurgerBabble</h3>
+                    <p class="game-desc">A narrative-driven time-management game addressing themes of dyslexia through
+                        fast-paced burger shop mechanics.</p>
 
-	<footer id="contact">
-		<h2>Let's Build Something</h2>
-		<p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">Available for full-time roles
-			in the UK.</p>
+                    <div class="highlight-box">
+                        <h4>KEY FOCUS</h4>
+                        <p style="margin: 0;">Programmed the core order-fulfillment <strong>State Machine</strong> and
+                            time-management logic. Collaborated closely with other teams and 2D artists to tie the
+                            complex gameplay mechanics directly into the narrative-driven interface.</p>
+                    </div>
 
-		<div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-			<a href="mailto:poudelbinay@outlook.com" class="btn btn-primary" style="padding: 0.8rem 2rem;">Email Me</a>
-			<a href="https://wa.me/9779808250167" class="btn btn-outline"
-				style="padding: 0.8rem 2rem; border-color: #25D366; color: #25D366;" target="_blank">💬 WhatsApp</a>
-		</div>
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Implementing the gameplay state machine helped me understand how
+                            structured state management simplifies complex gameplay flows and reduces bugs in
+                            time-critical systems.</p>
+                    </div>
 
-		<div class="social-links">
-			<a href="https://www.linkedin.com/in/binaya-poudel-0196b820a/" target="_blank">LinkedIn</a>
-			<a href="https://github.com/96bp19" target="_blank">GitHub</a>
-			<a href="https://blog.yarsalabs.com/author/binaya/" target="_blank">Technical Blog</a>
-		</div>
-	</footer>
+                    <div class="tech-stack">
+                        <span class="tech-tag">State Machines</span>
+                        <span class="tech-tag">UI Programming</span>
+                        <span class="tech-tag">Game Jam</span>
+                    </div>
+                    <div class="links">
+                        <a href="https://prerak.itch.io/burger-bab" class="btn btn-outline" target="_blank">Play on
+                            Itch.io</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="Goober.png" alt="Goobers">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">Goobers (Contract)</h3>
+                    <p class="game-desc">A chaotic physics-based multiplayer racer.</p>
+
+                    <div class="highlight-box">
+                        <h4>KEY FOCUS</h4>
+                        <p style="margin: 0;">Integrated <strong>Photon Fusion</strong> to handle authoritative server
+                            logic and real-time rigid body physics synchronization across multiple clients.</p>
+                    </div>
+
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Working with Photon Fusion taught me how network authority and physics
+                            synchronization affect gameplay feel in multiplayer games. I learned how important
+                            deterministic behaviour is when multiple clients interact in real time.</p>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">Photon Fusion</span>
+                        <span class="tech-tag">Networked Physics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <div class="card-image-wrapper">
+                    <img src="TrapVsMonster.png" alt="Trap vs Monster">
+                </div>
+                <div class="game-content">
+                    <h3 class="game-title">Trap vs Monster (In Development)</h3>
+                    <p class="game-desc">A lane-based strategy defense game blending <em>Orcs Must Die</em>, <em>Kingdom
+                            Rush</em>, and <em>Plants vs Zombies</em> with systemic depth.</p>
+
+                    <div class="highlight-box">
+                        <h4>WHAT I BUILT</h4>
+                        <ul>
+                            <li>Lane-based trap & enemy architecture supporting stacking, counter-play, and
+                                enemy-specific pressure.</li>
+                            <li>Charge-driven elemental gate system converting projectiles into elemental variants.</li>
+                            <li>Wave-pattern-based spawning system with overlapping wave pressure.</li>
+                            <li>Math-driven trap balance model using expected activations, reliability, and economy
+                                pressure.</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box highlight-alt">
+                        <h4>WHAT I LEARNED</h4>
+                        <p style="margin: 0;">Designing systems that resist dominant strategies. Learned how to balance
+                            traps and enemies so players must adapt their strategy instead of relying on one overpowered
+                            setup.</p>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-tag">Systems Design</span>
+                        <span class="tech-tag">Enemy AI</span>
+                        <span class="tech-tag">Game Balancing</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer id="contact">
+        <h2>LET'S BUILD SOMETHING</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">Available for full-time roles
+            in the UK.</p>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="mailto:poudelbinay@outlook.com" class="btn btn-primary" style="padding: 0.8rem 2rem;">Email Me</a>
+            <a href="https://wa.me/9779808250167" class="btn btn-outline"
+                style="padding: 0.8rem 2rem; border-color: #25D366; color: #25D366;" target="_blank">💬 WhatsApp</a>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/binaya-poudel-0196b820a/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/96bp19" target="_blank">GitHub</a>
+            <a href="https://blog.yarsalabs.com/author/binaya/" target="_blank">Blogs</a>
+        </div>
+    </footer>
 
 </body>
 
